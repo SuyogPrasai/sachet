@@ -1,8 +1,11 @@
-import Image from "next/image";
+import { Header } from "@/components/layout/Header"
 
-export default function Home() {
+function Home() {
   return (
-    <div className="">
+    <div>
+      <Header />
     </div>
-  );
+  )
 }
+
+export default Home

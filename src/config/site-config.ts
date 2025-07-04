@@ -1,7 +1,6 @@
 // src/config/site-config.ts
 import type { Metadata } from "next";
 
-
 export const main_metadata: Metadata = {
   title: "Sachet - Your Source for Notices, Articles & News",
   description: "Sachet is a media platform developed and managed by the students of Nepal",
