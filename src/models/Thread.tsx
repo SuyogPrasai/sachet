@@ -7,13 +7,13 @@ const ThreadSchema: Schema<ThreadDB> = new Schema(
   {
     title: { type: String, required: true, trim: true },
     content: { type: String, required: false },
-    publishedIn: { type: Date, required: true },
     published_for: { type: String, required: true },
-    publisherID: { type: String, ref: "User", required: true }, // User ID reference
-    voteCount: { type: Number, default: 0 },
+    // publisherID: { type: String, ref: "User", required: true }, // User ID reference
+    // voteCount: { type: Number, default: 0 },
     postTags: [{ type: String }],
     trashed: { type: Boolean, default: false },
     category: { type: String, required: true },
+    details: { type: Object, required: true}
   },
   {
     timestamps: true, // Adds createdAt and updatedAt fields automatically

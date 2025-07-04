@@ -5,6 +5,9 @@ Analyse the provided email and extract the following information: the date the e
   "date": "<date the email was sent, formatted as YYYY-MM-DD>",
   "content": "<main body of the email, excluding salutations and signatures>",
   "author": "<sender's name or email address>",
+  "category": "<the general cateogory of the notice like science, history arts, etc )>",
+  "tags": ["<List of tags associated with the notice>"],
+  "published_for": "< the group of people this notice maybe for for eg Grade 12 students, general highschoolers>",
   "details": {
     "location": "<event location, if applicable>",
     "prize_pool": "<prize pool, if applicable>",
