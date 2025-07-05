@@ -6,6 +6,8 @@ import { ChatCompletionResponse } from "@/types/api-responses";
 import { ZodError } from "zod";
 import { parse } from "path";
 import ThreadModel from "@/models/Thread";
+import { sendThreadNewsLetters } from "@/lib/emails/send-thread-newsletters-emails";
+import { thread_link } from "@/config/site-config";
 
 export async function POST(request: NextRequest) {
     // Ensure DB connection
@@ -117,7 +119,23 @@ export async function POST(request: NextRequest) {
                     publishedIn: publishedIn, // Added the missing required field
                 });
 
-                console.log('Thread created successfully:', thread);
+                console.log('Thread created successfully:', thread)
+
+                console.log("sending newsletters")
+                // 4. Send Thread to Newsletters
+                await sendThreadNewsLetters({
+                    _id: thread._id,
+                    title: thread.title,
+                    content: thread.content,
+                    createdAt: thread.createdAt,
+                    postTags: thread.postTags,
+                    category: thread.category,
+                    published_for: thread.published_for,
+                    link: process.env.BASE_URL + thread_link + thread._id,
+                    author: thread.author,
+                    updatedAt: thread.updatedAt,
+                    details: thread.details
+                });
 
                 // Return successful response with parsed content
                 return NextResponse.json(
