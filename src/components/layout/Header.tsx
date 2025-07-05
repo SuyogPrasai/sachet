@@ -13,9 +13,6 @@ export function Header() {
             <p className="text-3xl md:text-4xl font-bold font-sans">Sachet</p>
           </Link>
         </div>
-        <div className="flex items-center gap-2 mx-auto">
-          <MainSearch  />
-        </div>
         <div className="ml-25"></div>
       </div>
     </header>
