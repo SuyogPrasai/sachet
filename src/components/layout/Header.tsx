@@ -16,6 +16,7 @@ export function Header() {
         <div className="flex items-center gap-2 mx-auto">
           <MainSearch  />
         </div>
+        <div className="ml-10"></div>
       </div>
     </header>
   );

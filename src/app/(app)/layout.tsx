@@ -7,6 +7,8 @@ import { AppSidebar } from "@/components/layout/Sidebar";
 import { Toaster } from "@/components/ui/sonner";
 
 import { main_metadata } from "@/config/site-config";
+import { Header } from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -50,9 +52,11 @@ export default function RootLayout({
             <AppSidebar />
             <SidebarInset>
               {/* Main content area */}
+              <Header />
               <main className="">
                 {children}
               </main>
+              <Footer />
               <Toaster />
             </SidebarInset>
           </SidebarProvider>
