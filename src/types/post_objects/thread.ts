@@ -12,8 +12,8 @@ export interface ThreadDB extends PostObjectDB {
 export default interface Thread extends PostObject {
   _id?: string;
   published_for: string;
+  link: string;
   details: {
-
   },
   publisher?: [
     {

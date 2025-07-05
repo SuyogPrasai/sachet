@@ -1,3 +1,10 @@
+import Thread from "./post_objects/thread";
+
+export interface ApiResponse {
+    success: boolean;
+    message: string;
+}
+
 export interface ChatCompletionResponse {
   id: string;
   object: 'chat.completion';
@@ -25,4 +32,13 @@ export interface TokenUsage {
   prompt_tokens: number;
   completion_tokens: number;
   total_tokens: number;
+}
+
+export interface ThreadResponse {
+    success: boolean;
+    thread: Thread;
+}
+export interface ThreadsResponse extends ApiResponse {
+  threads: Thread[];
+  totalPages?: number;
 }
