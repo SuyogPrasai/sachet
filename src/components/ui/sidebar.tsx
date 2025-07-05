@@ -311,9 +311,9 @@ const SidebarTrigger = React.forwardRef<
           </div>
         ) : (
           <div className="flex flex-col justify-between h-4 w-8">
-            <span className="block h-[0.1rem] w-full bg-black rounded-full"></span>
-            <span className="block h-[0.1rem] w-full bg-black rounded-full"></span>
-            <span className="block h-[0.1rem] w-full bg-black rounded-full"></span>
+            <span className="block h-[0.1rem] w-full bg-white rounded-full"></span>
+            <span className="block h-[0.1rem] w-full bg-white rounded-full"></span>
+            <span className="block h-[0.1rem] w-full bg-white rounded-full"></span>
           </div>
         )}
       </div>
