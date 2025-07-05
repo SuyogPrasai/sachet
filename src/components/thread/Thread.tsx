@@ -4,6 +4,7 @@ import React from 'react'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { Share2 } from 'lucide-react'
+import { thread_link } from '@/config/site-config'
 
 interface ThreadProps {
   title: string
@@ -107,7 +108,7 @@ export const ThreadCard: React.FC<ThreadProps> = ({
             </button>
 
             <Link
-              href={`/threads/${id}`}
+              href={`${thread_link}${id}`}
               className="retro-button border border-black px-4 py-2 font-mono text-sm bg-gray-100 text-gray-500 hover:text-black transition"
             >
               VIEW DETAILS

@@ -16,11 +16,5 @@ export default interface Thread extends PostObject {
   link: string;
   author: string;
   details: {
-  },
-  publisher?: [
-    {
-      name: string;
-      username: string;
-    }
-  ];
+  }
 }
