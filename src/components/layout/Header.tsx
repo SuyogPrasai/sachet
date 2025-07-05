@@ -40,7 +40,7 @@ export function Header() {
         <div className="flex-grow" />
 
         {/* Right: Nav and Search */}
-        <div className="flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-6">
           {/* Navigation Links */}
           <nav className="flex gap-6 text-lg font-medium text-gray-700">
             {["about", "projects", "blog", "contact"].map((page) => (
