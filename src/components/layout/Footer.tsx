@@ -5,7 +5,7 @@ import FooterNewsletter from "./FooterNewsletter";
 
 type SocialIconProps = {
   Icon: React.ComponentType<{ size?: number; className?: string }>;
-  href: string;
+href: string;
 };
 
 const SocialIcon = ({ Icon, href }: SocialIconProps) => (

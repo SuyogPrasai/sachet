@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { SidebarTrigger } from "@/components/ui/sidebar";
+import MainSearch from "../shared/MainSearch";
 
 export function Header() {
   return (
@@ -11,6 +12,9 @@ export function Header() {
           <Link href="/">
             <p className="text-3xl md:text-4xl font-bold font-sans">Sachet</p>
           </Link>
+        </div>
+        <div className="flex items-center gap-2 mx-auto">
+          <MainSearch  />
         </div>
       </div>
     </header>
