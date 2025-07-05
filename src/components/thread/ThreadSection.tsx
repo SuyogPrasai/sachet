@@ -21,7 +21,9 @@ export default function ThreadSection({ threads }: { threads: Thread[] }) {
               tags={thread.postTags}
               // initialVotes={thread.voteCount || 0}
               id={thread._id || ""}
+              details={thread.details || {}}
               published_for={thread.published_for || ""}
+              category={thread.category || ""}
             />
         ))
       ) : (
