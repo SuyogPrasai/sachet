@@ -29,7 +29,7 @@ export default async function ThreadPage({ searchParams }: ThreadsPageProps) {
             <ThreadSection threads={threads} />
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex justify-center mb-10">
             <Suspense fallback={<div>Loading...</div>}>
               <PaginationControls
                 currentPage={page}

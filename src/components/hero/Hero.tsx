@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export default function SachetHero() {
     return (
@@ -26,9 +27,11 @@ export default function SachetHero() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                    <Button className="bg-white border border-gray-400 text-gray-800 hover:bg-gray-100 font-bold px-6 rounded-none py-6 hover:cursor-pointer">
-                        EXPLORE EVENTS →
-                    </Button>
+                    <Link href="/threads">
+                        <Button className="bg-white border border-gray-400 text-gray-800 hover:bg-gray-100 font-bold px-6 rounded-none py-6 hover:cursor-pointer">
+                            EXPLORE EVENTS →
+                        </Button>
+                    </Link>
                     <Button className="bg-white border border-gray-400 text-gray-800 hover:bg-gray-100 font-bold px-6 rounded-none py-6 hover:cursor-pointer">
                         LEARN MORE
                     </Button>

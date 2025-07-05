@@ -96,7 +96,8 @@ export async function GET(request: NextRequest) {
       return {
         _id: thread._id,
         title: thread.title,
-        content: thread.content ? summarizeText(thread.content) : "", // Handle optional content
+        author: thread.author,
+        content: thread.content || "", // Handle optional content
         published_for: thread.published_for,
         postTags: thread.postTags,
         category: thread.category,

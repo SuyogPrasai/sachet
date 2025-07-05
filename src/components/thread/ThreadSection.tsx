@@ -9,7 +9,7 @@ const ThreadCard = dynamic(() => import("./Thread").then(mod => mod.ThreadCard),
 
 export default function ThreadSection({ threads }: { threads: Thread[] }) {
   return (
-    <div className="mx-0 md:mx-auto lg:mx-0 w-full max-w-2xl flex flex-col items-center">
+    <div className="mx-0 md:mx-auto lg:mx-0 w-full max-w-4xl flex flex-col items-center">
       {threads.length > 0 ? (
         threads.map((thread) => (
             <ThreadCard
@@ -17,9 +17,9 @@ export default function ThreadSection({ threads }: { threads: Thread[] }) {
               title={thread.title}
               description={(thread.content ?? "").replace(/<\/?[^>]+(>|$)/g, "")}
               timestamp={new Date(thread.createdAt ?? "").toLocaleString()}
-              username={thread.publisher?.[0]?.username || ""}
+              author={thread.author || ""}
               tags={thread.postTags}
-              initialVotes={thread.voteCount || 0}
+              // initialVotes={thread.voteCount || 0}
               id={thread._id || ""}
               published_for={thread.published_for || ""}
             />

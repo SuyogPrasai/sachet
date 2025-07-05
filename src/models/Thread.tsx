@@ -8,6 +8,7 @@ const ThreadSchema: Schema<ThreadDB> = new Schema(
     title: { type: String, required: true, trim: true },
     content: { type: String, required: false },
     published_for: { type: String, required: true },
+    author: { type: String, required: true },
     // publisherID: { type: String, ref: "User", required: true }, // User ID reference
     // voteCount: { type: Number, default: 0 },
     postTags: [{ type: String }],

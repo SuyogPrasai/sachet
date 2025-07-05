@@ -113,7 +113,8 @@ export async function POST(request: NextRequest) {
                     details,
                     published_for,
                     postTags: tags,
-                    publishedIn: publishedIn // Added the missing required field
+                    author,
+                    publishedIn: publishedIn, // Added the missing required field
                 });
 
                 console.log('Thread created successfully:', thread);
