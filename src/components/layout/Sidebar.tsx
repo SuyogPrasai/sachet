@@ -58,7 +58,7 @@ export function AppSidebar() {
             <div className="flex items-center justify-center">
               <Link href="/" className="text-2xl font-bold p-5 flex items-center justify-center gap-2">
                 <Image src="/logo.png" alt="Parewa Logo" width={64} height={64} />
-                परेवा_
+                Sachet
               </Link>
             </div>
 

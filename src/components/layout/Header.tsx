@@ -9,7 +9,7 @@ export function Header() {
         <div className="flex items-center gap-2">
           <SidebarTrigger className="mr-2" />
           <Link href="/">
-            <p className="text-3xl md:text-4xl font-bold font-sans">परेवा_</p>
+            <p className="text-3xl md:text-4xl font-bold font-sans">Sachet</p>
           </Link>
         </div>
       </div>
