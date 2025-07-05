@@ -17,7 +17,6 @@ export default function SachetHero() {
         aria-hidden="true"
       />
 
-      {/* ...your original content here... */}
       {/* Left Content */}
       <div className="text-center md:text-left space-y-4 max-w-xl">
         <h1 className="text-5xl md:text-6xl font-black leading-tight tracking-tight">
@@ -29,11 +28,12 @@ export default function SachetHero() {
           <span className="text-green-600">SACHET</span>
           <span className="text-green-600">.</span>
         </h1>
+
         <p className="text-lg text-gray-800 font-serif">
-          I'm a Nepali competition and event discovery platform
-          <br />
-          designed specifically for high school students across Nepal.
+          Together, let’s build a future where every student in Nepal can say: “Yes, I had the chance.”
+
         </p>
+
         <div className="flex flex-col sm:flex-row gap-4 pt-4">
           <Link href="/threads">
             <Button className="bg-white border border-gray-400 text-gray-800 hover:bg-gray-100 font-bold px-6 rounded-none py-6 hover:cursor-pointer">
