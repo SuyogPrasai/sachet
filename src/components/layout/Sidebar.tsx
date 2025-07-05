@@ -17,32 +17,32 @@ import AuthButton from "@/components/shared/AuthButton";
 import Image from "next/image";
 
 const navItems = [
-  { title: "GENERAL NEWS", url: "/notices?category=General" },
-  { title: "DEPARTMENT'S MESSAGE", url: "/notices?category=Departments" },
-  { title: "SCHOOL ADMINISTRATION", url: "/notices?category=School" },
-  { title: "THE STUDENT COUNCIL", url: "/notices?category=Council" },
-  { title: "CLUBS AND EVENTS", url: "/notices?category=Clubs" },
+  { title: "VISA Information", url: "https://edition.cnn.com/" },
+  { title: "Competitions", url: "https://dofe.gov.np/" },
+  { title: "Events", url: "https://bnks.edu.np/#/" },
+  { title: "Nepal To USA", url: "https://bnks.edu.np/#/" },
+  { title: "Nepal's Entrance Exams", url: "https://bnksmun.wixsite.com/home" },
 ];
 
 const secondaryNavItems = [
-  { title: "LITERATURE", url: "/articles?category=Literature" },
-  { title: "SCIENCE AND TECH", url: "/articles?category=science" },
-  { title: "NATIONAL ARTICLES", url: "/articles?category=national" },
-  { title: "WORLD", url: "/articles?category=world" },
-  { title: "BNKS STORIES", url: "/articles?category=bnks" },
+  { title: "Hackathons", url: "https://lithub.com/" },
+  { title: "Literature", url: "https://scitechdaily.com/" },
+  { title: "Debating", url: "https://kathmandupost.com/" },
+  { title: "Competitive Maths", url: "https://world.org/" },
+  { title: "Story Tellings", url: "/articles?category=bnks" },
 ];
 const finalNavItems = [
-  { title: "ABOUT", url: "https://github.com/SuyogPrasai/parewa" },
-  { title: "DOCUMENTATION", url: "https://github.com/SuyogPrasai/parewa?tab=readme-ov-file#documentation" },
-  { title: "WAYS TO CONTRIBUTE", url: "#" },
-  { title: "REPORT A BUG", url: "https://forms.gle/e7LWQa73WBmnsiDS8" },
-  { title: "JOBS", url: "https://forms.gle/cybYghNXgoumfKfP6" },
-  { title: "CREDITS", url: "#" },
+  { title: "About", url: "https://github.com/SuyogPrasai/parewa" },
+  { title: "Documentation", url: "https://github.com/SuyogPrasai/parewa?tab=readme-ov-file#documentation" },
+  { title: "Ways to Contribute", url: "#" },
+  { title: "Report a bug", url: "https://forms.gle/e7LWQa73WBmnsiDS8" },
+  { title: "Jobs", url: "https://forms.gle/cybYghNXgoumfKfP6" },
+  { title: "Credits", url: "#" },
 ];
 
 const socialIcons = [
-  { Icon: Instagram, href: "https://www.instagram.com/parewa_bnks" },
-  { Icon: Github, href: "https://github.com/suyogprasai/parewa" },
+  { Icon: Instagram, href: "instagram.com" },
+  { Icon: Github, href: "github.com" },
   { Icon: Youtube, href: "https://www.youtube.com/@parewa_bnks" },
 ];
 
@@ -68,7 +68,7 @@ export function AppSidebar() {
               {navItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <a href={item.url} className="font-mono text-xl">
+                    <a href={item.url} className="font-serif text-xl">
                       <span>{item.title}</span>
                     </a>
                   </SidebarMenuButton>
@@ -80,7 +80,7 @@ export function AppSidebar() {
 
               <Link href="#">
                 <button className="bg-primary text-white py-2 px-4 w-full flex items-center justify-center font-sans font-bold">
-                  SUBMIT NOTICE <span className="ml-2 text-lg">→</span>
+                  Submit 
                 </button>
               </Link>
             </div>
@@ -90,7 +90,7 @@ export function AppSidebar() {
                 {secondaryNavItems.map((item) => (
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton asChild>
-                      <a href={item.url} className="font-mono text-xl">
+                      <a href={item.url} className="font-serif text-xl">
                         <span>{item.title}</span>
                       </a>
                     </SidebarMenuButton>
@@ -118,9 +118,9 @@ export function AppSidebar() {
             <div className="mt-6 p-4 border-gray-200">
               <div className="flex items-center gap-4 mb-5">
                 {/* Social Media Icons using Lucide React */}
-                <a href="https://github.com/suyogprasai/parewa" aria-label="Facebook"><Github className="h-5 w-5 text-gray-500" /></a>
-                <a href="https://www.instagram.com/parewa_bnks" aria-label="Twitter"><Instagram className="h-5 w-5 text-gray-500" /></a>
-                <a href="https://www.youtube.com/@parewa_bnks" aria-label="YouTube"><Youtube className="h-5 w-5 text-gray-500" /></a>
+                <a href="https://github.com/" aria-label="Facebook"><Github className="h-5 w-5 text-gray-500" /></a>
+                <a href="https://www.instagram.com/" aria-label="Twitter"><Instagram className="h-5 w-5 text-gray-500" /></a>
+                <a href="https://www.youtube.com/" aria-label="YouTube"><Youtube className="h-5 w-5 text-gray-500" /></a>
 
               </div>
               <div className="flex flex-col justify-center">

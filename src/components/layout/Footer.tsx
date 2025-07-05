@@ -41,24 +41,24 @@ const FooterLinkSection = ({ title, links }: FooterLinkSectionProps) => (
 // ---
 
 const Articles = [
-  { href: "/articles?category=Literature", text: "Literature" },
-  { href: "/articles?category=Science", text: "Science and Tech" },
-  { href: "/articles?category=National", text: "National Articles" },
-  { href: "/articles?category=World", text: "World" },
-  { href: "/articles?category=BNKS", text: "BNKS Stories" },
+  { href: "https://usefnepal.org/", text: "VISA Information" },
+  { href: "https://www.kaggle.com/competitions", text: "Competitions" },
+  { href: "https://www.kaggle.com/competitions", text: "Events" },
+  { href: "https://np.usembassy.gov/", text: "Nepal to USA" },
+  { href: "https://ioe.tu.edu.np/", text: "Nepal's Entrance Exams" },
 ];
 const Notices = [
-  { href: "/notices?category=General", text: "Genral News" },
-  { href: "/notices?category=Departments", text: "Department's Message" },
-  { href: "/notices?category=School", text: "School Administration" },
-  { href: "/notices?category=Council", text: "The Student Council" },
-  { href: "/notices?category=Clubs", text: "Clubs and Events" },
+  { href: "https://devpost.com/", text: "Hackathons" },
+  { href: "https://lithub.com/", text: "Literature" },
+  { href: "https://opentodebates.org/", text: "Debating" },
+  { href: "https://themathcontest.com/", text: "Competitive Maths" },
+  { href: "https://webflow.com/blog/storytelling-websites", text: "Story Telling" },
 ];
 
 const socialIcons = [
-  { Icon: Instagram, href: "https://www.instagram.com/parewa_bnks" },
-  { Icon: Github, href: "https://github.com/suyogprasai/parewa" },
-  { Icon: Youtube, href: "https://www.youtube.com/@parewa_bnks" },
+  { Icon: Instagram, href: "https://www.instagram.com/" },
+  { Icon: Github, href: "https://github.com/" },
+  { Icon: Youtube, href: "https://www.youtube.com/" },
 ];
 
 export default function Footer() {
@@ -72,7 +72,7 @@ export default function Footer() {
             <div className="md:col-span-1 ">
               <h2 className="text-4xl font-bold mb-4 font-oswald text-white text-center md:text-left">Sachet</h2>
               <p className="text-sm text-gray-300 mb-6 font-roboto mx-auto md:mx-0 max-w-xs text-center md:text-left "> {/* Added mx-auto for centering */}
-                Parewa is a student-driven information delivery platform developed entirely by the students of Budhanilkantha School. <strong>Your news, Your way</strong>
+                Sachet is Nepal's premier student platform connecting high schoolers with competitions, events, and opportunities nationwide. Discover, compete, and grow—<strong>all in one place.</strong>
               </p>
               <div className="flex gap-4 justify-center md:justify-start">
                 {socialIcons.map(({ Icon, href }, index) => (
