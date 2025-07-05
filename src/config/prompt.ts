@@ -1,22 +1,32 @@
 export const PROMPT = `
-Analyse the provided email and extract the following information: the date the email was sent, the main content of the email (excluding salutations, signatures, or boilerplate text), the author (sender's name or email address), and any relevant event details such as location, prize pool, deadline, organizer, link, and any additional details you identify as pertinent. Return the response in the following JSON format:
+Analyse the email provided below and extract the following information.
+
+1. **Summarise** the main content of the email in your own words (exclude salutations, signatures, and boilerplate text).
+2. Return your findings in the JSON structure shown, filling in as many fields as possible.  
+   • If a field is not present, set its value to null.  
+   • If multiple dates/locations are mentioned, choose the most relevant or include a brief note in "details".  
+   • Add any extra event‑specific fields you identify (e.g., dress code, agenda) inside "details".
+   - Also make sure to avoid response like this <a href="http://www.sachetnepal.com/codequest2025">www.sachetnepal.com/codequest2025</a> just the link www.sachetnepal.com/codequest2025
+
+Respond in **exactly** the following JSON format—no additional keys, comments, or free‑text outside the JSON block:
 
 {
-  "date": "<date the email was sent, formatted as YYYY-MM-DD>",
-  "content": "<main body of the email, excluding salutations and signatures>",
-  "author": "<sender's name or email address>",
-  "category": "<the general cateogory of the notice like science, history arts, etc )>",
-  "tags": ["<List of tags associated with the notice>"],
-  "published_for": "< the group of people this notice maybe for for eg Grade 12 students, general highschoolers>",
+  "title": "<short summary of the main topic as a relevant title>",
+  "date": "<YYYY-MM-DD>",
+  "content": "<concise summary of the main body>",
+  "author": "<sender name or email>",
+  "category": "<general category, e.g. science, arts, history>",
+  "tags": ["<tag1>", "<tag2>", "..."],
+  "published_for": "<intended audience, e.g. Grade 12 students>",
   "details": {
-    "location": "<event location, if applicable>",
-    "prize_pool": "<prize pool, if applicable>",
-    "deadline": "<event or registration deadline, if applicable>",
-    "organizer": "<event organizer, if applicable>",
-    "link": "<event link, if applicable>",
-    "<additional_field>": "<additional relevant detail, if identified>"
+    "location": "<event location>",
+    "prize_pool": "<prize pool>",
+    "deadline": "<registration or event deadline>",
+    "organizer": "<organizer>",
+    "link": "<relevant URL>",
+    "<additional_field>": "<additional detail>"
   }
 }
 
-Ensure the date is formatted as YYYY-MM-DD. If any details are not present in the email, include the corresponding field with a null value. Add any additional relevant details to the "details" object with appropriate field names based on the email content. If no event-related details are found, return an empty "details" object. Handle edge cases, such as ambiguous dates or multiple events, by selecting the most relevant information or noting ambiguities in the "details" object.
+Ensure the "date" field is in ISO format (YYYY-MM-DD). If no event‑related information is found, return "details": {}.
 `;

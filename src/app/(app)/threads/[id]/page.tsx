@@ -1,98 +1,141 @@
-// app/thread/page.tsx
-
 import axios from "axios";
 import { notFound } from "next/navigation";
 import { Separator } from "@/components/ui/separator";
-import Image from "next/image";
-import ThreadSection from "@/components/thread/ThreadSection";
-import { ThreadCard } from "@/components/thread/Thread"; // Optional: reuse
-// import VoteComponent from "@/components/common/VoteComponent";
+import MacWindow from "@/components/shared/MacWindow";
+import { Share2 } from "lucide-react";
+import Link from "next/link";
+import { thread_link } from "@/config/site-config";
+import { Oswald, Roboto} from "next/font/google";
 
-async function fetchThread(thread_id: string) {
-  try {
-    const res = await axios.get(
-      `${process.env.PAREWA_BASE_URI}/api/get_thread/?id=${thread_id}`
-    );
-    if (res.data.success) return res.data.thread;
-    console.log("Thread fetch unsuccessful.");
-    return null;
-  } catch (error: any) {
-    console.error("Error fetching thread:", error.message);
-    notFound();
-    return null;
-  }
-}
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: "700",
+  variable: "--font-oswald",
+});
 
-async function fetchRelatedThreads({
-  category,
-  excluding
-}: {
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: "300",
+  variable: "--font-roboto",
+})
+
+interface Thread {
+  _id: string;
+  title: string;
+  content: string;
+  author: string;
+  postTags: string[];
   category: string;
-  excluding: string;
-}) {
-  try {
-    const res = await axios.get(
-      `${process.env.PAREWA_BASE_URI}/api/get_news?category=${category}&limit=3&excluding=${excluding}`
-    );
-    if (res.data.success) return res.data.threads;
-    console.log("Related threads fetch unsuccessful.");
-    return [];
-  } catch (error: any) {
-    console.error("Error fetching related threads:", error.message);
-    return [];
-  }
+  details: Record<string, string>;
+  createdAt: string;
+  link: string;
+  published_for?: string;
 }
 
-async function fetchTopArticles() {
+async function fetchThread(threadId: string): Promise<Thread | null> {
+  if (!threadId) return null;
+
   try {
-    const res = await axios.get(
-      `${process.env.PAREWA_BASE_URI}/api/top_articles`
+    const { data } = await axios.get(
+      `${process.env.BASE_URI}/api/get_thread`,
+      { params: { id: threadId } }
     );
-    if (res.data.success) return res.data.articles;
-    return [];
-  } catch {
-    return [];
+    return data.success ? (data.thread as Thread) : null;
+  } catch (err: any) {
+    console.error("Thread fetch failed:", err.message);
+    return null;
   }
 }
 
 export default async function ThreadPage({
-  searchParams
+  searchParams,
 }: {
-  searchParams: { id: string };
+  searchParams: { id?: string };
 }) {
-  const thread_id = searchParams?.id || "";
-  const thread = await fetchThread(thread_id);
-  const relatedThreads = await fetchRelatedThreads({
-    category: thread?.category,
-    excluding: thread_id
-  });
-
+  const threadId = await searchParams.id ?? "";
+  const thread = await fetchThread(threadId);
   if (!thread) notFound();
 
+  const {
+    _id,
+    title,
+    content,
+    author,
+    postTags,
+    category,
+    details,
+    createdAt,
+    link,
+    published_for,
+  } = thread;
+
+  const timestamp = createdAt
+    ? new Date(createdAt).toLocaleString("en-GB", {
+      dateStyle: "medium",
+      timeStyle: "short",
+      timeZone: "Asia/Kathmandu",
+    })
+    : "";
+
   return (
-    <div className="min-h-screen bg-white pb-10">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-10 pt-10">
-        <h1 className="text-4xl sm:text-5xl font-oswald mb-4">Notice</h1>
+    <div className="min-h-screen flex items-start justify-center bg-[#f5f5f5] pb-10">
+      <div className="w-full max-w-5xl p-4 sm:p-6 lg:p-10">
+        <MacWindow filename={`${postTags?.[0] || "thread"}_post.dat`}>
+          <div className="px-6 py-8">
+            {/* Meta Header */}
+            <div className="flex flex-wrap items-center gap-2 text-sm text-gray-500 font-mono mb-4">
+              {postTags.map((tag) => (
+                <span
+                  key={tag}
+                  className="px-2 py-1 rounded bg-green-100 text-green-800 border border-green-300 text-xs"
+                >
+                  {tag}
+                </span>
+              ))}
+              <span className="bg-black text-white px-3 py-1 text-xs">
+                {category}
+              </span>
+              <span className="text-xs">
+                Posted by {author} • {timestamp}
+              </span>
+              {published_for && (
+                <span className="text-xs text-blue-600">
+                  Published for {published_for}
+                </span>
+              )}
+            </div>
 
-        {/* Thread Header */}
-        <h2 className="text-3xl font-bold font-oswald uppercase mt-4 max-w-3xl">
-          {thread.title}
-        </h2>
-        <Separator className="my-4" />
+            {/* Title */}
+            <h1 className={`text-4xl sm:text-5xl ${oswald.className} mb-6`}>{title}</h1>
+            <Separator className="my-6" />
 
-        {/* Thread Content */}
-        <div className="prose prose-base lg:prose-lg max-w-none text-justify mb-6">
-          <div dangerouslySetInnerHTML={{ __html: thread?.content || "" }} />
-        </div>
+            {/* Content */}
+            <article className="prose prose-base lg:prose-lg max-w-none text-justify mb-8">
+              {content}
+            </article>
+            {/* Details Table */}
+            {Object.keys(details).length > 0 && (
+              <div className="border border-gray-200 p-4 font-mono text-sm w-full rounded-md bg-gray-50 mb-8">
+                <div className="grid grid-cols-1 sm:grid-cols-1 gap-3">
+                  {Object.entries(details).map(([key, value]) =>
+                    value ? (
+                      <div key={key} className="flex w-full">
+                        <span className={`bg-green-800 flex align-center text-white px-2 py-1 rounded-l text-xs font-semibold w-1/3 whitespace-nowrap ${oswald.className}`}>
+                          {key.replace(/_/g, " ").toLocaleUpperCase()}
+                        </span>
+                        <span className={`bg-white text-gray-800 font-bold px-2 py-1 rounded-r w-2/3 ${roboto.className} break-words`}>
+                          {value}
+                        </span>
+                      </div>
+                    ) : null
+                  )}
+                </div>
+              </div>
+            )}
 
 
-        {/* Related Threads */}
-        <div className="mt-16">
-          <h3 className="text-3xl font-bold font-oswald mb-6 underline underline-offset-8 decoration-gray-200">
-            Similar Threads in {thread.category}
-          </h3>
-          <ThreadSection threads={relatedThreads} />
-        </div>
+          </div>
+        </MacWindow>
       </div>
     </div>
   );

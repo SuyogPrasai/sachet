@@ -53,9 +53,9 @@ export default function NewsletterSignupCard() {
   };
 
   return (
-    <Card className="relative w-full mx-auto lgplus:mx-0 max-w-[400px] lg:max-w-sm bg-white text-gray-800 p-10 rounded-none mt-10 lgplus:mt-0">
+    <Card className="relative w-full mx-auto lgplus:mx-0 max-w-[400px] lg:max-w-[500px] bg-white text-gray-800 p-10 rounded-none mt-10 lgplus:mt-0">
       <CardHeader className="p-0 mb-6">
-        <CardTitle className="text-gray-900 text-3xl font-extrabold leading-tight mt-2">
+        <CardTitle className="text-gray-900 text-4xl font-extrabold leading-tight mt-2">
           Join the Newsletter
         </CardTitle>
         <CardDescription className="text-primary-high_bright text-xl font-bold mt-2">
@@ -109,7 +109,7 @@ export default function NewsletterSignupCard() {
             {message}
           </p>
         )}
-        <p className="text-xs mt-6 text-left mx-auto text-gray-600 w-[80%] lgplus:w-[95%] ml-3">
+        <p className="text-xs mt-6 text-left mx-auto text-gray-600 w-[80%] lgplus:w-[100%]">
           By signing up, I agree to receive emails from Parewa and to the{" "}
           <a
             href="/terms_and_conditions.pdf"

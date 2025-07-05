@@ -17,24 +17,10 @@ const timelineData = [
   },
   {
     number: "03",
-    title: "Values",
-    subtitle: "",
-    description:
-      "We believe in inclusivity, transparency, and community. Every student deserves access to opportunities, reliable information, and a supportive network to grow and thrive.",
-  },
-  {
-    number: "04",
     title: "SDG Goals",
     subtitle: "",
     description:
       `Our platform supports SDG 4 and SDG 10 by making educational opportunities such as competitions, olympiads, and events accessible to all students in Nepal. By centralizing information, we bridge the gap between urban and rural areas, ensuring equal access regardless of background. This promotes inclusive and equitable learning while reducing opportunity inequality. Through these efforts, we empower Nepal’s youth and build meaningful partnerships that contribute to a more educated, just, and future-ready society.`,
-  },
-  {
-    number: "05",
-    title: "Community",
-    subtitle: "",
-    description:
-      "A vibrant space where students, educators, and organizers connect, share, and inspire each other—building a stronger, more informed student community across Nepal.",
   },
 ];
 

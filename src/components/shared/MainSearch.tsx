@@ -3,6 +3,13 @@
 import { Search } from 'lucide-react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import React, { useState, useCallback } from 'react';
+import { Roboto } from 'next/font/google';
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: '300',
+  variable: '--font-roboto',
+});
 
 function MainSearch() {
   const router = useRouter();
@@ -38,7 +45,7 @@ function MainSearch() {
         placeholder="Search competitions, events, and op"
         value={search}
         onChange={handleInputChange}
-        className="w-full pl-10 pr-4 py-2 border-2 border-black rounded-none text-md font-serif text-black-700 placeholder:text-gray-400 focus:outline-none"
+        className={`w-full pl-10 pr-4 py-2 border-2 border-black rounded-none text-md ${roboto.className} text-black-700 placeholder:text-gray-400 focus:outline-none`}
       />
     </div>
   );

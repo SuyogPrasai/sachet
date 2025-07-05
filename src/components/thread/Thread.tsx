@@ -86,7 +86,7 @@ export const ThreadCard: React.FC<ThreadProps> = ({
                         <span className="font-semibold capitalize whitespace-nowrap">
                           {key.replace(/_/g, ' ')}:
                         </span>
-                        <span className="text-gray-700 font-serif">{value}</span>
+                        <span className="text-gray-700 font-mono">{value}</span>
                       </div>
                     );
                   } else {
