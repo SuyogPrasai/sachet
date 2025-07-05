@@ -1,41 +1,40 @@
 import React from "react";
+import { Oswald, Roboto } from "next/font/google";
 
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: "300",
+  variable: "--font-roboto",
+});
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: "700",
+  variable: "--font-oswald",
+})
 const timelineData = [
   {
     number: "01",
-    title: "Infographics",
-    subtitle: "EPS 10 : VECTOR",
+    title: "Mission",
+    subtitle: "",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Sachet empowers Nepali high school students by connecting them to nationwide opportunities, competitions, and events. More than a website, it’s a supportive student community built on the motto: “For the students, by the students.” Your gateway to opportunity.",
   },
   {
     number: "02",
-    title: "Infographics",
-    subtitle: "EPS 10 : VECTOR",
+    title: "Vision",
+    subtitle: "",
     description:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "To become Nepal’s most trusted and comprehensive student information hub, inspiring a new generation of learners and leaders. To further expand to all 77 districts of Nepal.",
   },
   {
     number: "03",
-    title: "Infographics",
-    subtitle: "EPS 10 : VECTOR",
+    title: "SDGs",
+    subtitle: "",
     description:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "We support SDG 4 by making learning opportunities accessible to all Nepali students, enabling participation in competitions and events that expand their horizons. For SDG 10, we centralize information to bridge urban-rural gaps, ensuring equal access to opportunities regardless of background or location.",
   },
-  {
-    number: "04",
-    title: "Infographics",
-    subtitle: "EPS 10 : VECTOR",
-    description:
-      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  },
-  {
-    number: "05",
-    title: "Infographics",
-    subtitle: "EPS 10 : VECTOR",
-    description:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
-  },
+  
 ];
 
 const green = "#16a34a";
@@ -50,14 +49,14 @@ const Timeline: React.FC = () => {
       {/* Heading aligned with the vertical line */}
       <div
         style={{
-          color: green,
-          fontSize: 28,
           fontWeight: 700,
           marginBottom: 40,
           paddingLeft: circleSize / 2, // aligns with vertical line (center of circle)
         }}
+
+        className={`${oswald.className} text-6xl text-green-600 mb-2`}
       >
-        सचेत
+        Our Values and Our Goals
       </div>
 
       {/* Timeline Items with vertical line */}
@@ -122,11 +121,11 @@ const Timeline: React.FC = () => {
               >
                 <div
                   style={{
-                    color: green,
-                    fontWeight: 700,
                     fontSize: 18,
                     marginBottom: 4,
                   }}
+
+                  className={`${oswald.className} text-6xl text-green-700 mb-2`}
                 >
                   {item.title}
                 </div>
@@ -140,7 +139,7 @@ const Timeline: React.FC = () => {
                 >
                   {item.subtitle}
                 </div>
-                <div style={{ color: "#444", fontSize: 15 }}>
+                <div style={{ color: "#444", fontSize: 15 }} className={`${roboto.className}`}>
                   {item.description}
                 </div>
               </div>

@@ -40,9 +40,6 @@ export default function SachetHero() {
               EXPLORE EVENTS →
             </Button>
           </Link>
-          <Button className="bg-white border border-gray-400 text-gray-800 hover:bg-gray-100 font-bold px-6 rounded-none py-6 hover:cursor-pointer">
-            LEARN MORE
-          </Button>
         </div>
       </div>
 

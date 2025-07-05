@@ -9,6 +9,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { main_metadata } from "@/config/site-config";
 import { Header } from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import AnnouncementCard from "@/components/layout/Announcement";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -47,20 +48,19 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} ${lato.variable} ${oswald.variable} ${bebas_neue.variable} antialiased`}
       >
-        <AuthProvider>
-          <SidebarProvider defaultOpen={false}>
-            <AppSidebar />
-            <SidebarInset>
-              {/* Main content area */}
-              <Header />
-              <main className="">
-                {children}
-              </main>
-              <Footer />
-              <Toaster />
-            </SidebarInset>
-          </SidebarProvider>
-        </AuthProvider>
+        <SidebarProvider defaultOpen={false}>
+          <AppSidebar />
+          <SidebarInset>
+            <AnnouncementCard />
+            {/* Main content area */}
+            <Header />
+            <main className="">
+              {children}
+            </main>
+            <Footer />
+            <Toaster />
+          </SidebarInset>
+        </SidebarProvider>
       </body>
     </html>
   );

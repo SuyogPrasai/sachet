@@ -1,4 +1,11 @@
 import NewsletterSignupCard from "./NewsletterSignupCard";
+import { Roboto } from "next/font/google";
+
+const roboto = Roboto({
+    subsets: ["latin"],
+    weight: "300",
+    variable: "--font-roboto",
+})
 
 export default async function NewsletterSignup() {
     return (
@@ -14,13 +21,13 @@ export default async function NewsletterSignup() {
                     </h2>
 
                     {/* Description */}
-                    <p className="text-lg text-gray-600 font-serif leading-relaxed">
+                    <p className={`text-lg text-gray-600 ${roboto.className} leading-relaxed`}>
                         Join <span className="font-semibold text-black">thousands of students</span> discovering life-changing opportunities, programs, and events across Nepal. Your journey starts here.
                     </p>
 
                     {/* Highlighted Stat */}
                     <div className="text-3xl sm:text-4xl font-extrabold text-green-600 drop-shadow-sm">
-                        5,000+ Events Listed
+                        50+ Events Listed
                     </div>
 
                 </div>

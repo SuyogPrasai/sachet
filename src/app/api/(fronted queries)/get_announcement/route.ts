@@ -29,8 +29,6 @@ export async function GET(request: NextRequest) {
             title: announcement.title,
             content: announcement.content,
             category: announcement.category,
-            publishedIn: announcement.publishedIn,
-            publisherID: announcement.publisherID,
             link: announcement.link,
             author: announcement.author,
             show: announcement.show,

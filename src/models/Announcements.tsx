@@ -8,8 +8,6 @@ const AnnouncementSchema: Schema<AnnouncementDB> = new Schema(
     title: { type: String, required: true, trim: true },
     content: { type: String, required: false },
     category: { type: String, required: true },
-    publishedIn: { type: Date, required: true },
-    publisherID: { type: String, ref: "User", required: true }, // User ID reference
     trashed: { type: Boolean, default: false },
     link: { type: String, required: false },
     author: { type: String, required: true },
