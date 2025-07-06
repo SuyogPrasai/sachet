@@ -46,7 +46,7 @@ export function Header() {
             {["about", "projects", "blog", "contact"].map((page) => (
               <Link
                 key={page}
-                href={`/${page}`}
+                href={`https://github.com/SuyogPrasai/sachet`}
                 className="relative group transition-colors duration-200 hover:text-green-600"
               >
                 <span className={`capitalize ${roboto.className}`} >{page}</span>

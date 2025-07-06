@@ -31,7 +31,11 @@ export default function SachetHero() {
 
         <p className="text-lg text-gray-800 font-serif">
           Together, let’s build a future where every student in Nepal can say: “Yes, I had the chance.”
+          <br />
+          <span className='font-sans'>
 
+            studentsachet@gmail.com
+          </span>
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 pt-4">

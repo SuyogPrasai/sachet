@@ -4,8 +4,8 @@ import requests
 from datetime import datetime, timezone
 
 # Email credentials
-MAIL_USERNAME = "studentsachet@gmail.com"
-MAIL_PASSWORD = "jvrs ivth lasq yfsl"
+MAIL_USERNAME = ""
+MAIL_PASSWORD = ""
 IMAP_SERVER = "imap.gmail.com"
 
 # API endpoint configuration
