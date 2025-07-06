@@ -94,8 +94,7 @@ export default function Footer() {
 
         {/* Bottom Footer */}
         <div className="mt-10 border-t border-gray-700 pt-6 text-center text-gray-400 text-xs">
-          <p>PAREWA © {new Date().getFullYear()} All rights reserved</p>
-          <p>6229 Suyog</p>
+          <p>Sachet © {new Date().getFullYear()} All rights reserved</p>
         </div>
       </div>
     </footer>
