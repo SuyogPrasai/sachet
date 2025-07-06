@@ -20,7 +20,7 @@
 Sachet is a notice delivery system designed specifically for high school students in Nepal. It serves as a national forum to end the "information hell" by consolidating scattered updates from Instagram, websites, and popups into a single, accessible platform. Unlike other platforms like Edusanjal or Nepvents, Sachet leverages a locally run large language model (LLM), `mistralai/mathstral-7b-v0.1`, to fully automate the process of collecting, categorizing, and publishing event notices, eliminating the need for manual admin intervention. Whether it’s events, competitions, or opportunities, Sachet makes it easy for Nepali high schoolers to stay informed.
 
 [![Watch the video](public/featured_image.png)](https://www.youtube.com/watch?v=ArAa0lO1NlA)
-
+<p align="center"><i>Click the image for video of the site</i></p>
 
 ## Installation Instructions
 To set up Sachet locally for development or testing, follow these steps:
