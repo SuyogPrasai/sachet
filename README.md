@@ -2,9 +2,9 @@
 <div align="center">
 
 [![Donate](https://img.shields.io/badge/_-Donate-red.svg?logo=githubsponsors&labelColor=555555&style=for-the-badge)](Collaborators.md#collaborators "Donate")
-![GitHub License](https://img.shields.io/github/license/suyogprasai/parewa?style=for-the-badge&logoColor=white)
-[![Commits](https://img.shields.io/github/commit-activity/m/suyogprasai/parewa?label=commits&style=for-the-badge)](https://github.com/suyogprasai/parewa/commits "Commit History")
-[![Last Commit](https://img.shields.io/github/last-commit/suyogprasai/parewa/master?label=&style=for-the-badge&display_timestamp=committer)](https://github.com/suyogprasai/parewa/pulse/monthly "Last activity")
+![GitHub License](https://img.shields.io/github/license/suyogprasai/sachet?style=for-the-badge&logoColor=white)
+[![Commits](https://img.shields.io/github/commit-activity/m/suyogprasai/sachet?label=commits&style=for-the-badge)](https://github.com/suyogprasai/sachet/commits "Commit History")
+[![Last Commit](https://img.shields.io/github/last-commit/suyogprasai/sachet/master?label=&style=for-the-badge&display_timestamp=committer)](https://github.com/suyogprasai/sachet/pulse/monthly "Last activity")
 </div>
 <div align="center">
   
@@ -12,7 +12,7 @@
   src="public/logo.png" 
   align="center" 
   width="300"
-  alt="Parewa Logo"
+  alt="Sachet Logo"
 />
 </div>
 
